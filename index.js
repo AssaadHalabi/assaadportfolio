@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 var path = require('path');
 const sendMail = require('./mail');
-const port = 3000;
+const port = process.env.PORT;
 
 app.use(express.static('public'));
 
