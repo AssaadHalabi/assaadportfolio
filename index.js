@@ -2,12 +2,21 @@ const express = require('express');
 const app = express();
 var path = require('path');
 const sendMail = require('./mail');
-const port = process.env.PORT;
+const port = process.env.PORT || 8080;
 
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname + '/public/Assaad.html'));
+})
+
+app.get('/Resume', (req, res) => {
+  // res.sendFile(path.join(__dirname + "/public/Assaad's Resume.pdf"));
+  fs.readFile(__dirname + "./public/Assaad's Resume.pdf" , function (err,data){
+    res.contentType("application/pdf");
+    res.send(data);
+});
+  // res.sendFile("./public/Assaad's Resume.pdf");
 })
 app.use(express.urlencoded({
   extended: true
