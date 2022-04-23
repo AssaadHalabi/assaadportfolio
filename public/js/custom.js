@@ -67,7 +67,7 @@ $(window).on('load', function() {
       });
     });
 
-    var bolbyPopup = function(){
+    var AssaadPopup = function(){
       /*=========================================================================
               Magnific Popup
       =========================================================================*/
@@ -141,7 +141,7 @@ $(window).on('load', function() {
       });
     }
 
-    bolbyPopup();
+    AssaadPopup();
 
     /*=========================================================================
      Infinite Scroll
@@ -172,7 +172,7 @@ $(window).on('load', function() {
         $container.isotope( 'appended', $newElems );
       });
 
-      bolbyPopup();
+      AssaadPopup();
 
       // Check last page
       curPage++;
