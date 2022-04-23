@@ -54,13 +54,14 @@
      fit-margin-right="0"
      fit-margin-bottom="0" /><g
      id="g5360"><rect
-       width="300"
+       width="400"
        height="300"
        id="rect4"
        style="fill:#ffffff;fill-opacity:1"
-       x="0"
+       x="-50"
        y="0"
-       ry="49.137924" /><g
+       ry="49.137924" />
+       <g
        transform="matrix(5.9026317,0,0,5.9026317,521.39665,-711.31763)"
        id="g4167"><path
          style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none"
