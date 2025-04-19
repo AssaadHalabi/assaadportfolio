@@ -1,36 +1,39 @@
 const nodemailer = require("nodemailer");
-const mailGun = require("nodemailer-mailgun-transport");
-const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(
-  process.env.SENDGRID_API_KEY
-);
 
+// Create transporter
+const transporter = nodemailer.createTransport({
+  service: "gmail", // or 'smtp.mailtrap.io', 'mailgun', etc.
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
+  },
+});
+
+// Function to send email
 function sendMail(name, email, subject, text) {
-
-  const msg = {
-    from: "zoomala.service@gmail.com",
-    to: "asaadalhalabi@gmail.com",
+  const mailOptions = {
+    from: process.env.GMAIL_USER,
+    to: "asaadalhalabi@gmail.com", // your personal or company email
     subject: subject,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${text}`,
   };
 
-  return sgMail.send(msg);
-
-  // Exporting the sendmail
+  return transporter.sendMail(mailOptions);
 }
-module.exports = (req, res) => {
+
+// API route handler (e.g., /api/send)
+module.exports = async (req, res) => {
   const { InputName, InputSubject, InputEmail, InputMessage } = req.body;
-  // Check if the subject is valid
+
   if (!InputSubject || InputSubject.trim() === "") {
     return res.status(400).json({ message: "Subject is required." });
   }
-  console.log("Data: ", req.body);
-  sendMail(InputName, InputEmail, InputSubject, InputMessage)
-    .then(() => {
-      res.status(200).json({ message: "Email sent!!!" });
-    })
-    .catch((error) => {
-      console.error(error.response.body);
-      res.status(500).json({ message: "Internal Error" });
-    });
+
+  try {
+    await sendMail(InputName, InputEmail, InputSubject, InputMessage);
+    res.status(200).json({ message: "Email sent successfully!" });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    res.status(500).json({ message: "Internal Error", error });
+  }
 };
