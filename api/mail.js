@@ -14,8 +14,11 @@ function sendMail(name, email, subject, text) {
   const mailOptions = {
     from: process.env.GMAIL_USER,
     to: "asaadalhalabi@gmail.com", // your personal or company email
-    subject: subject,
+    subject: `Portfolio: ${subject}`,
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${text}`,
+    html: `<p><strong>Name:</strong> ${name}</p>
+           <p><strong>Email:</strong> ${email}</p>
+           <p><strong>Message:</strong> ${text}</p>`,
   };
 
   return transporter.sendMail(mailOptions);
