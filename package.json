@@ -9,6 +9,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",
     "express": "^4.17.3",

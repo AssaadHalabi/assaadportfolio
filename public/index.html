@@ -74,6 +74,31 @@
 			transform: translateX(-50%);
 		}
 
+		/* Job location styling */
+		.timeline-container .meta {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-bottom: 10px;
+		}
+
+		.location-pill {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 4px 10px;
+			background-color: rgba(255, 255, 255, 0.08);
+			border: 1px solid rgba(255, 255, 255, 0.15);
+			color: #f8f9fa;
+			border-radius: 999px;
+			font-size: 0.85em;
+			line-height: 1;
+		}
+
+		.location-pill i {
+			font-size: 0.95em;
+		}
+
 		@media (max-width: 768px) {
 			.timeline-container {
 				margin-left: 0;
@@ -511,7 +536,8 @@
 									<h3 class="title">AWS Certified Developer – Associate</h3>
 									<p>
 										Credential ID: 7eb3bfd205b844ea990a13bfc6ffc910<br>
-										<a href="https://www.credly.com/badges/ebb607a4-454d-4a4f-9417-5657facdec48/linked_in_profile" target="_blank" rel="noopener">View Certification</a>
+										<a href="https://www.credly.com/badges/ebb607a4-454d-4a4f-9417-5657facdec48/linked_in_profile"
+											target="_blank" rel="noopener">View Certification</a>
 									</p>
 								</div>
 							</div>
@@ -573,8 +599,32 @@
 
 							<div class="timeline-container wow fadeInUp">
 								<div class="content">
+									<span class="time">Jul 2025 - Present</span>
+									<h3 class="title">Forward Deployed Engineer - Thoughtful AI</h3>
+									<div class="meta">
+										<span class="location-pill"><i class="icon-location-pin"></i> United States ·
+											Remote</span>
+									</div>
+									<p class="mt-2">• Engineer custom backend and integration layers to handle complex
+										workflows, including API orchestration and secure data transfer.</p>
+									<p class="mt-2">• Embedded directly with healthcare provider teams to integrate and
+										deploy Thoughtful's AI-powered Revenue Cycle Automation platform.</p>
+									<p class="mt-2">• Collaborate cross-functionally with Product Managers, Platform
+										Engineers, and CX to tailor solutions to real-world operational needs.</p>
+									<p class="mt-2">• Lead deployments from code to customer delivery — handling
+										configuration, troubleshooting, and continuous optimization.</p>
+									<p class="mt-2">• Apply healthcare-specific insights (compliance, data standards) to
+										ensure reliability and value at every touchpoint.</p>
+								</div>
+							</div>
+
+							<div class="timeline-container wow fadeInUp">
+								<div class="content">
 									<span class="time">Jul 2022 - Present</span>
 									<h3 class="title"> Software Engineer - Oreyeon</h3>
+									<div class="meta">
+										<span class="location-pill"><i class="icon-location-pin"></i> Portugal · Remote</span>
+									</div>
 									<p class="mt-2">• Engineered robust containerized Node.js/Python microservices,
 										achieving 99.9% SLA and reducing time-to-insight by 85%.</p>
 									<p class="mt-2">• Automated 90%+ of manual batch-handling tasks via reusable
@@ -593,6 +643,10 @@
 								<div class="content">
 									<span class="time">Jan 2021 - Jun 2021</span>
 									<h3 class="title">Software Engineer - AUB</h3>
+									<div class="meta">
+										<span class="location-pill"><i class="icon-location-pin"></i> Beirut,
+											Lebanon</span>
+									</div>
 									<p> • Automating data pre-processing and visualization pipelines and tasks using
 										Python.
 									</p>
@@ -608,6 +662,10 @@
 								<div class="content">
 									<span class="time">Aug 2020 - Sep 2020</span>
 									<h3 class="title">Front-End Developer - All Girls Code</h3>
+									<div class="meta">
+										<span class="location-pill"><i class="icon-location-pin"></i> Beirut,
+											Lebanon</span>
+									</div>
 									<p>Performed some redesigns and added responsive elements (timeline...)</p>
 								</div>
 							</div>
